@@ -1,0 +1,267 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+    width: 100%;
+    border: 2px solid black;
+    border-left: black 1px;
+    border-right: black 1px;
+    border-top: black 1px;
+}
+
+
+.logo_small{
+    margin-top: -10px;
+    width: 125px;
+    float: left;
+    margin-right: 10px;
+}
+
+.main-nav{
+    top: 0;
+    list-style: none;
+    height: 70px;
+    width: 100%;
+    padding-top: 10px;
+    background-color: rgb(90, 88, 88);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+.main-nav li
+{
+    padding-top: 15px;
+    float: left;
+    margin-right: 5px;
+}
+
+.main-nav li.active a
+{
+    color: #043777;
+    
+}
+
+.main-nav li a:hover
+{
+    color: #043777;
+}
+
+.main-nav li a
+{
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.logo{
+    width: 50%;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 18;
+    width: 100%;
+    border: 3px solid #043777;
+    border-left: black 1px;
+    border-right: black 1px;
+    border-bottom: black 1px;
+}
+
+.footer_section div {
+    background-color: #043777;
+    width: 30%;
+    margin-right: 20px;
+}
+
+.footer_section h3{
+    margin: 10px 10px;
+}
+
+.footer_section img{
+    width: 40px;
+    vertical-align: middle;
+    margin: 20px;   
+}
+
+.footer_section h4{
+    display: inline;
+}
+
+.footer_section p{
+    display: inline;
+}
+
+.footer_section li{
+    list-style: none;
+}
+
+.footer_section li a{
+    margin: 20px 20px;
+    text-decoration: none;
+    
+}
+
+div.footer div.footer_section2{
+    width: 33%;
+}
+
+.footer_section2 h3{
+    margin: 10px 10px;
+}
+
+.footer_section2 li{
+    list-style: none;
+}
+
+.footer_section2 li a{
+    margin: 10px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+div.footer_copyright{
+    width: 100%;
+    background-color: #C99918;
+    text-align: center;
+}
+
+/* producten */
+
+.product{
+    border: 3px solid #043777;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    width: 15%;
+    height: 50vh;
+    padding: 20px;
+    margin: 20px;
+}
+
+.product h3{
+    font-size: larger;
+}
+
+.product h4{
+    font-size: medium;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.product_img{
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product img{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 35vh; 
+}
+
+.product_caption{
+    display: inline-block;
+    text-align: center;
+}
+
+.add_to_cart{
+    width: 100%;
+    background-color: white;
+    border-color: #043777;
+    border-radius: 20px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    left: -5px;
+}
+
+/* Contact */
+.Contact form{
+    margin: auto;
+    border: 2px solid #043777;
+    border-radius: 25px;
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.Contact h2{
+    color: #043777;
+}
+
+.Contact form input{
+    font-size: 16px;
+    color: #043777;
+    padding-bottom: 5px;
+    margin: 20px;
+    border-color: #043777;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 80%;
+}
+
+.Contact form Button{
+    width: 20%;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border-color: #043777;
+    background-color: #FFF;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.Register form{
+    margin: auto;
+    border: 2px solid #043777;
+    border-radius: 25px;
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.Register h2{
+    color: #043777;
+}
+
+.Register form input{
+    font-size: 16px;
+    color: #043777;
+    padding-bottom: 5px;
+    margin: 20px;
+    border-color: #043777;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 80%;
+}
+
+.Register form Button{
+    width: 20%;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border-color: #043777;
+    background-color: #FFF;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
