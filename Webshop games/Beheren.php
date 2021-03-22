@@ -15,12 +15,11 @@ session_start();
 <body>
     <header id="main-nav">
         <ul class="main-nav">
-            <a href="../webshop games/home.php"><img class="logo_small" src="../webshop games/Img/logo.png" alt="" srcset="">
+            <a href="../webshop games/home.php"> <img class="logo_small" src="../webshop games/Img/Logo2.JPG" alt="" srcset="">
                 <li class="active"><a href="../webshop games/home.php"> Home </a></li>
                 <li><a href="../webshop games/producten.php"> Producten </a></li>
-                <li><a href="../webshop games/Test_winkelwagen.php"> Test </a></li>
                 <li><a href="../webshop games/contact.php"> Contact </a></li>
-                <li style="float: right;"><a href="../webshop games/checkout.php"><img style="width: 25px;" src="../webshop games/Img/shopping-cart.png"></a></li>
+                <li style="float: right;"><a href="../webshop games/Test_winkelwagen.php"><img style="width: 25px;" src="../webshop games/Img/shopping-cart.png"></a></li>
                 <?php
                 if (isset($_SESSION['naam'])) {
 

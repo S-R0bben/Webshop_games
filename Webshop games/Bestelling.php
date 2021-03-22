@@ -22,13 +22,13 @@ $resultaat = $conn->query($vraag);
 
 
 <head>
-    <link href="../webshop games/style.css" rel="stylesheet" type="text/css">
+    <link href="./style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
         <header id="main-nav">
             <ul class="main-nav">
-                <img class="logo_small" src="../webshop games/Img/logo.png" alt="" srcset="">
+            <a href="../webshop games/home.php"> <img class="logo_small" src="../webshop games/Img/Logo2.JPG" alt="" srcset="">
                 <li class="active"><a href="../webshop games/home.php"> Home </a></li>
                 <li><a href="../webshop games/producten.php"> Producten </a></li>
                 <li><a href="../webshop games/contact.php"> Contact </a></li>

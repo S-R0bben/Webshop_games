@@ -3,6 +3,6 @@ session_start();
 
 
 $_SESSION['Winkelwagen'] = array();
-header("Location: ../webshop games/checkout.php");
+header("Location: ./Test_winkelwagen.php");
 
 ?>

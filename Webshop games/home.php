@@ -8,6 +8,7 @@ session_start();
 <head>
     <title>Welvarende Heren</title>
     <link href="../webshop games/style.css" rel="stylesheet" type="text/css">
+    <link href="../webshop games/background.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap" rel="stylesheet">
 </head>
@@ -18,7 +19,6 @@ session_start();
             <a href="../webshop games/home.php"> <img class="logo_small" src="../webshop games/Img/Logo2.JPG" alt="" srcset="">
                 <li class="active"><a href="../webshop games/home.php"> Home </a></li>
                 <li><a href="../webshop games/producten.php"> Producten </a></li>
-                <li><a href="../webshop games/Test_winkelwagen.php"> Test </a></li>
                 <li><a href="../webshop games/contact.php"> Contact </a></li>
                 <li style="float: right;"><a href="../webshop games/Test_winkelwagen.php"><img style="width: 25px;" src="../webshop games/Img/shopping-cart.png"></a></li>
                 <?php
@@ -41,8 +41,13 @@ session_start();
         </ul>
     </header>
 
-    <img class="logo" src="Img/Logo2.JPG" alt="" srcset="">
-
+    <div id="tekst">
+            <div class="image">
+                <div class='slider'>
+                    <div class='slide1'></div>
+                    <div class='slide2'></div>
+                    <div class='slide3'></div>
+                </div>
     <footer>
         <!-- Footer -->
         <div class="footer">

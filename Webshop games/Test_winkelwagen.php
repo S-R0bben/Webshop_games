@@ -1,24 +1,64 @@
 <?php
 session_start();
+include 'Connectie.php';
+
+
+include 'Connectie.php';
+$totaal_prijs = 0;
+
+if (isset($_SESSION['Winkelwagen'])) {
+    echo '<div class="producten">';
+    foreach ($_SESSION['Winkelwagen'] as $id) {
+
+        $vraag = 'SELECT * FROM producten WHERE Prod_id= ' . $id;
+        $resultaat = $conn->query($vraag);
+
+        if ($resultaat->num_rows > 0) { {
+
+                $rij = $resultaat->fetch_assoc();
+
+                $id = $rij['Prod_id'];
+                $naam = $rij['Prod_naam'];
+                $prijs = $rij['Prod_prijs'];
+                $omschrijving = $rij['Prod_omschrijving'];
+                $image = $rij['Prod_image'];
+
+                $totaal_prijs += $prijs;
+
+
+                echo '<form class="card">';
+                echo '<h3>' . $naam . '</h3>';
+                echo '<img src="' . $image . '"width="250" height="190">';
+                echo ' <p class="prijs">€ ' . $prijs . '</p>';
+                echo ' <p class="omschrijving">' . $omschrijving . '</p>';
+                echo '<input type="hidden" value=' . $id . '>';
+                echo '</form>';
+            }
+        }
+    }
+    echo '</div>';
+}
 ?>
 
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Generics | Store</title>
-        <meta name="description" content="This is the description">
-        <link href="../webshop games/style.css" rel="stylesheet" type="text/css">
-        <script src="store.js" async></script>
-    </head>
-    <body>
+
+<head>
+    <title>Welvarende Heren</title>
+    <link href="../webshop games/style.css" rel="stylesheet" type="text/css">
+    <link href="../Webshop games/styles.css" rel="stylesheet" type="text/css">
+    <script src="store.js" async></script>
+</head>
+
+<body>
     <header id="main-nav">
         <ul class="main-nav">
-            <a href="../webshop games/home.php"><img class="logo_small" src="../webshop games/Img/logo.png" alt="" srcset="">
+            <a href="../webshop games/home.php"> <img class="logo_small" src="../webshop games/Img/Logo2.JPG" alt="" srcset="">
                 <li class="active"><a href="../webshop games/home.php"> Home </a></li>
                 <li><a href="../webshop games/producten.php"> Producten </a></li>
                 <li><a href="../webshop games/contact.php"> Contact </a></li>
-                <li style="float: right;"><a href="../webshop games/checkout.php"><img style="width: 25px;" src="../webshop games/Img/shopping-cart.png"></a></li>
+                <li style="float: right;"><a href="../webshop games/Test_winkelwagen.php"><img style="width: 25px;" src="../webshop games/Img/shopping-cart.png"></a></li>
                 <?php
                 if (isset($_SESSION['naam'])) {
 
@@ -37,64 +77,7 @@ session_start();
 
                 ?>
         </ul>
-    </header>
-        <section class="container content-section">
-            <h2 class="section-header">MUSIC</h2>
-            <div class="shop-items">
-                <div class="shop-item">
-                    <span class="shop-item-title">Album 1</span>
-                    <img class="shop-item-image" src="Images/Album 1.png">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$12.99</span>
-                        <button class="btn btn-primary shop-item-button" type="button">TOEVOEGEN AAN WINKELWAGEN</button>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <span class="shop-item-title">Album 2</span>
-                    <img class="shop-item-image" src="Images/Album 2.png">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$14.99</span>
-                        <button class="btn btn-primary shop-item-button"type="button">TOEVOEGEN AAN WINKELWAGEN</button>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <span class="shop-item-title">Album 3</span>
-                    <img class="shop-item-image" src="./Img/Watch_Dogs_Legion.jpg">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$9.99</span>
-                        <button class="btn btn-primary shop-item-button" type="button">TOEVOEGEN AAN WINKELWAGEN</button>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <span class="shop-item-title">Album 4</span>
-                    <img class="shop-item-image" src="Images/Album 4.png">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$19.99</span>
-                        <button class="btn btn-primary shop-item-button" type="button">TOEVOEGEN AAN WINKELWAGEN</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container content-section">
-            <h2 class="section-header">MERCH</h2>
-            <div class="shop-items">
-                <div class="shop-item">
-                    <span class="shop-item-title">T-Shirt</span>
-                    <img class="shop-item-image" src="Images/Shirt.png">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$19.99</span>
-                        <button class="btn btn-primary shop-item-button" type="button">TOEVOEGEN AAN WINKELWAGEN</button>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <span class="shop-item-title">Coffee Cup</span>
-                    <img class="shop-item-image" src="Images/Cofee.png">
-                    <div class="shop-item-details">
-                        <span class="shop-item-price">$6.99</span>
-                        <button class="btn btn-primary shop-item-button" type="button">TOEVOEGEN AAN WINKELWAGEN</button>
-                    </div>
-                </div>
-            </div>
+
         </section>
         <section class="container content-section">
             <h2 class="section-header">WINKELWAGEN</h2>
@@ -107,31 +90,13 @@ session_start();
             </div>
             <div class="cart-total">
                 <strong class="cart-total-title">Totaal</strong>
+                <?php echo '<h5> de totaal prijs is € ' . $totaal_prijs . '</h5>'; ?>
                 <span class="cart-total-price">$0</span>
+
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">AANKOOP</button>
+            <button class="btn btn-primary btn-purchase" type="button">BESTELLEN</button>
         </section>
-        <footer class="main-footer">
-            <div class="container main-footer-container">
-                <h3 class="band-name">The Generics</h3>
-                <ul class="nav footer-nav">
-                    <li>
-                        <a href="https://www.youtube.com" target="_blank">
-                            <img src="Images/YouTube Logo.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.spotify.com" target="_blank">
-                            <img src="Images/Spotify Logo.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com" target="_blank">
-                            <img src="Images/Facebook Logo.png">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-    </body>
+
+</body>
+
 </html>
